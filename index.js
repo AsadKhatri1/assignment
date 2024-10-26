@@ -1,4 +1,5 @@
 import express from "express";
+import userRouter from "./routes/userRouter.js";
 
 import { connectDB } from "./config/db.js";
 
@@ -22,6 +23,8 @@ app.get("/", (req, res) => {
 connectDB();
 
 // api endpoints
+
+app.use("/api/user", userRouter);
 
 // server started
 
